@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Members</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./memberlist.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./images/logo.png" />
+            <h2>Robotics Club</h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="/">
+            <span class="material-icons-sharp"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/addmember">
+            <span class="material-icons-sharp"> person_add </span>
+            <h3>Add members</h3>
+          </a>
+          <a href="/removemember">
+            <span class="material-icons-sharp"> person_remove </span>
+            <h3>Remove members</h3>
+          </a>
+          <a href="/memberlist" class="active">
+            <span class="material-icons-sharp"> groups </span>
+            <h3>Members list</h3>
+            <span class="members-count"><%=memberCount%></span>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <div class="middle">
+        <div id="table">
+          <h2>Members</h2>
+          <table class="list-table">
+            <thead>
+              <tr class="list-contents">
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Club ID</th>
+                <th>Roll No.</th>
+                <th>Designation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% datas.forEach((data,index) => { %>
+                <tr class="list-contents">
+                  <td><%=index+1%></td>
+                  <td><%=data.name%></td>
+                  <td><%=data.clubId%></td>
+                  <td><%=data.rollNumber%></td>
+                  <td><%=data.designation%></td>
+                </tr>
+              <%});%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+
+          <div class="details">
+            <p>Hey, <b>Niranjan</b></p>
+            <small class="text-muted">Admin</small>
+          </div>
+          <div class="profile-photo">
+            <img src="./images/profile-1.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./form.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet"  />
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <aside>
+          <div class="top">
+            <div class="logo">
+              <img src="./images/logo.png" />
+              <h2>Robotics Club</h2>
+            </div>
+            <div class="close" id="close-btn">
+              <span class="material-icons-sharp"> close </span>
+            </div>
+          </div>
+          <div class="sidebar">
+            <a href="/" >
+              <span class="material-icons-sharp"> dashboard </span>
+              <h3>Dashboard</h3>
+            </a>
+            <a href="/addmember" class = <%=add%> >
+              <span class="material-icons-sharp"> person_add </span>
+              <h3>Add members</h3>
+            </a>
+            <a href="/removemember" class = <%=remove%>>
+              <span class="material-icons-sharp"> person_remove </span>
+              <h3>Remove members</h3>
+            </a>
+            <a href="/memberlist">
+              <span class="material-icons-sharp"> groups </span>
+              <h3>Members list</h3>
+              <span class="members-count"><%=memberCount%></span>
+            </a>
+            <a href="#">
+              <span class="material-icons-sharp"> logout </span>
+              <h3>Logout</h3>
+            </a>
+          </div>
+        </aside>
+
+        <div class="middle">
+          <div class="form-content">
+            <form class = "form" method="post" action="/<%=route%>">
+
+              <% if (route=="addmember") {%>
+                <h2 style="text-align: center;">Add Member</h2>
+              <%}else{%>
+                <h2 style="text-align: center;">Remove Member</h2>
+              <%}%>
+  
+  
+              <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" required autocomplete="off">
+              </div>
+  
+              <div>
+                <label for="clubid">Club ID</label>
+                <input type="text" name="clubid" required autocomplete="off">
+              </div>
+  
+              <% if (route== "addmember"){ %>
+                <div>
+                  <label for="rollno">Roll Number</label>
+                  <input type="number" name="rollno" required autocomplete="off">
+                </div>
+  
+                <div>
+                  <label for="department">Department</label>
+                  <input type="text" name="department" required autocomplete="off">
+                </div>
+  
+                <div>
+                  <label for="year">Year</label>
+                  <input type="number" name="year" required autocomplete="off">
+                </div>
+    
+                <div>
+                  <label for="email">Email</label>
+                  <input type="email" name="email" required style="text-transform: lowercase" autocomplete="off">
+                </div>
+  
+                <div>
+                  <label for="designation">Designation</label>
+                  <input type="text" name="designation" required autocomplete="off">
+                </div>
+  
+              <%}%>
+  
+  
+  
+  
+  
+              <button class="button" type="submit"><%=title%></button>
+  
+            </form>
+  
+  
+          </div>
+      </div>
+        
+        <div class="right">
+
+          <div class="top">
+            <button id = 'menu-btn'>
+              <span class="material-icons-sharp">
+                menu
+                </span>
+            </button>
+
+            <div class="details">
+              <p>Hey, <b>Niranjan</b> </p>
+              <small class = "text-muted">Admin</small >
+            </div>
+            <div class="profile-photo">
+              <img src="./images/profile-1.jpeg" alt="">
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+</body>
+</html>
